@@ -577,24 +577,48 @@ document.getElementById("defaultOpen").click();
   </div>
 </section>
 
+<style>
+   .terms-container {
+    display: none;
 
+ /*.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Use the full height of the viewport */
+  }*/
+</style>
+
+<script>
+ 
+function toggleTerms() {
+  var termsContainer = document.querySelector('.terms-container');
+  // Toggle the display of terms content
+  termsContainer.style.display = (termsContainer.style.display === 'block') ? 'none' : 'block';
+}
+
+</script>
+
+<!-- Terms and Conditions Section -->
 
 <!-- Terms and Conditions Section -->
 <section id="terms">
+  <a href="#" style="padding-bottom: 0px; margin-left: 45%; font-size: 20px; text-decoration: none; color: blue;" onclick="toggleTerms(); return false;">Terms and Conditions</a>
   <div class="terms-container">
     <h2>Terms and Conditions</h2>
-<p>Welcome to our Watch Shop. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern Your Watch Shop's relationship with you in relation to this website.</p>
-<p>By making a purchase on our website, you acknowledge and agree to our strict No Refund Policy. All sales are final, and we do not offer refunds, returns, or exchanges under any circumstances.</p>
-<p>This policy applies to all products and services offered. We urge customers to review their orders carefully before completing the purchase.</p>
-<p>In the case of defective or damaged goods, please contact our customer support within 48 hours of receiving your order for assistance.</p>
-<p>By proceeding with your purchase, you accept and agree to these terms without exception. Thank you for your understanding and cooperation.</p>
-
+    <p>Welcome to our Watch Shop. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern Your Watch Shop's relationship with you in relation to this website.</p>
+    <p>By making a purchase on our website, you acknowledge and agree to our strict No Refund Policy. All sales are final, and we do not offer refunds, returns, or exchanges under any circumstances.</p>
+    <p>This policy applies to all products and services offered. We urge customers to review their orders carefully before completing the purchase.</p>
+    <p>In the case of defective or damaged goods, please contact our customer support within 48 hours of receiving your order for assistance.</p>
+    <p>By proceeding with your purchase, you accept and agree to these terms without exception. Thank you for your understanding and cooperation.</p>
     <p>For any further information, please <a href="tel:+91 8675234269">contact</a>.</p>
   </div>
 </section>
-  <footer>
+
+<footer>
     &copy; 2024 Time Piece Heaven.
   </footer>
+
 <style>
   
 #terms {

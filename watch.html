@@ -5,89 +5,191 @@
 <title>Watch Shop</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-	body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f7f7f7;
-}
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+  }
 
-.container {
-  width: 90%;
-  margin: auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
+  .container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+  }
 
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 300px;
-  height: 400px;
-  overflow: hidden;
-}
+  .carousel-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
 
-.carousel img {
-  max-width: 200px; /* Adjust the width of the images */
-  max-height: 100%; /* Adjust the height of the images */
-  display: none;
-}
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border: 10px solid black;
+    border-radius: 10px;
+    margin: auto;
+  }
 
-.carousel img.active {
-  display: block;
-}
-.specifications {
-  margin-top: 20px;
-  text-align: center;
-}
+  .carousel img {
+    max-width: 200px;
+    max-height: 100%;
+    display: none;
+    border: 2px solid transparent;
+  }
 
-.specifications h2 {
-  margin-bottom: 10px;
-}
+  .carousel img.active {
+    display: block;
+  }
 
-.specifications table {
-  margin: auto;
-  text-align: left;
-}
+  .price {
+    margin-top: 20px;
+    font-size: 24px;
+  }
 
-.specifications table td {
-  padding: 5px 10px;
-}
+  .offer {
+    color: green;
+  }
 
-.price {
-  margin-top: 20px;
-  font-size: 24px;
-}
+  .strikethrough {
+    text-decoration: line-through;
+    color: #888;
+  }
 
-.offer {
-  color: green;
-}
+  .specifications {
+    margin-top: 20px;
+    text-align: center;
+  }
 
-.strikethrough {
-  text-decoration: line-through;
-  color: #888;
-}
+  .specifications h2 {
+    margin-bottom: 10px;
+  }
 
-    footer {
-      color: black;
-      text-align: center;
-      bottom: 0;
-      padding-top: 10%;
-      width: 100%;
-    }
+  .specifications table {
+    margin: auto;
+    text-align: left;
+  }
 
+  .specifications table td {
+    padding: 5px 10px;
+  }
 
+  .swipe-counter {
+    margin-bottom: 10px;
+  }
+
+  .arrow-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3px;
+    box-sizing: border-box;
+  }
+
+  .arrow {
+    cursor: pointer;
+    font-size: 24px;
+    color: #888;
+  }
+
+  .arrow-left {
+    order: 1;
+  }
+
+  .arrow-right {
+    order: 3;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
 </style>
 </head>
 <body>
+<div class="container">
+  <div class="carousel-container">
+    <div class="carousel" ontouchstart="startTouch(event)" ontouchmove="moveTouch(event)">
+      <img src="watch1-front.png" alt="Watch Front View" class="active" id="slide1">
+      <img src="watch1-side.png" alt="Watch Side View" id="slide2">
+      <img src="watch1-back.png" alt="Watch Back View" id="slide3">
+      <img src="watch1-angle1.png" alt="Watch Angle View 1" id="slide4">
+      <img src="watch1-angle2.png" alt="Watch Angle View 2" id="slide5">
+    </div>
+    <div class="arrow-container">
+      <div class="arrow arrow-left" onclick="changeSlide(-1)">&#10094;</div>
+      <div class="arrow arrow-right" onclick="changeSlide(1)">&#10095;</div>
+    </div>
+  </div>
+  <div class="swipe-counter">Image <span id="currentSlide">1</span> of <span id="totalSlides">5</span></div>
+
+  <div class="price">
+    <span class="offer">Offer Price: ₹14999</span>
+    <span class="strikethrough">Original Price: ₹19999</span>
+  </div>
+
+  <div class="specifications">
+    <h2>Watch Specifications</h2>
+    <table>
+      <tr>
+        <td>Case Size:</td>
+        <td>42mm</td>
+      </tr>
+      <tr>
+        <td>Case Material:</td>
+        <td>Titanium</td>
+      </tr>
+      <tr>
+        <td>Water Resistance:</td>
+        <td>200 meters</td>
+      </tr>
+      <tr>
+        <td>Movement Type:</td>
+        <td>Quartz</td>
+      </tr>
+      <tr>
+        <td>Complications:</td>
+        <td>Chronograph</td>
+      </tr>
+      <tr>
+        <td>Dial Color:</td>
+        <td>Silver</td>
+      </tr>
+      <tr>
+        <td>Strap Material:</td>
+        <td>Nylon</td>
+      </tr>
+      <tr>
+        <td>Additional Features:</td>
+        <td>GPS</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
 <script>
-	let slideIndex = 0;
+let slideIndex = 0;
 let xDown = null;
+let swipeCount = 0;
+const totalSlides = document.querySelectorAll(".carousel img").length;
 
 function startTouch(evt) {
   xDown = evt.touches[0].clientX;
@@ -108,6 +210,8 @@ function moveTouch(evt) {
   }
 
   xDown = null;
+  swipeCount++;
+  updateSwipeCount();
 }
 
 function changeSlide(n) {
@@ -126,69 +230,27 @@ function showSlides(n) {
   }
 
   slides[slideIndex].style.display = "block";
+  updateSwipeCount();
 }
 
+function updateSwipeCount() {
+  document.getElementById("currentSlide").innerText = slideIndex + 1;
+  document.getElementById("totalSlides").innerText = totalSlides;
+}
 </script>
-<div class="container">
-  <div class="carousel" ontouchstart="startTouch(event)" ontouchmove="moveTouch(event)">
-    <img src="watch1-front.png" alt="Watch Front View" class="active">
-    <img src="watch1-side.png" alt="Watch Side View">
-    <img src="watch1-back.png" alt="Watch Back View">
-    <img src="watch1-angle1.png" alt="Watch Angle View 1">
-    <img src="watch1-angle2.png" alt="Watch Angle View 2">
-  </div>
 
-  <div class="price">
-    <span class="offer">Offer Price: ₹14999</span>
-    <span class="strikethrough">Original Price: ₹19999</span>
-  </div>
+<style>
+	 footer {
+      color: black;
+      text-align: center;
+      bottom: 0;
+      padding-top: 60px;
+      width: 100%;
+    }
 
-
-  <div class="specifications">
-    <h2>Watch Specifications</h2>
-    <table>
-  <tr>
-    <td>Case Size:</td>
-    <td>42mm</td>
-  </tr>
-  <tr>
-    <td>Case Material:</td>
-    <td>Titanium</td>
-  </tr>
-  <tr>
-    <td>Water Resistance:</td>
-    <td>200 meters</td>
-  </tr>
-  <tr>
-    <td>Movement Type:</td>
-    <td>Quartz</td>
-  </tr>
-  <tr>
-    <td>Complications:</td>
-    <td>Chronograph</td>
-  </tr>
-  <tr>
-    <td>Dial Color:</td>
-    <td>Silver</td>
-  </tr>
-  <tr>
-    <td>Strap Material:</td>
-    <td>Nylon</td>
-  </tr>
-  <tr>
-    <td>Additional Features:</td>
-    <td>GPS</td>
-  </tr>
-</table>
-
-  </div>
-
-</div>
-<script src="script.js"></script>
-
-  <footer>
+</style>
+<footer>
     &copy; 2024 Time Piece Heaven.
   </footer>
-
 </body>
 </html>
