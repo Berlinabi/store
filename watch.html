@@ -33,15 +33,14 @@
 }
 
 .carousel img {
-  width: 100%;
-  height: auto;
+  max-width: 200px; /* Adjust the width of the images */
+  max-height: 100%; /* Adjust the height of the images */
   display: none;
 }
 
 .carousel img.active {
   display: block;
 }
-
 .specifications {
   margin-top: 20px;
   text-align: center;
@@ -73,6 +72,15 @@
   text-decoration: line-through;
   color: #888;
 }
+
+    footer {
+      color: black;
+      text-align: center;
+      bottom: 0;
+      padding-top: 10%;
+      width: 100%;
+    }
+
 
 </style>
 </head>
@@ -130,6 +138,12 @@ function showSlides(n) {
     <img src="watch1-angle2.png" alt="Watch Angle View 2">
   </div>
 
+  <div class="price">
+    <span class="offer">Offer Price: ₹14999</span>
+    <span class="strikethrough">Original Price: ₹19999</span>
+  </div>
+
+
   <div class="specifications">
     <h2>Watch Specifications</h2>
     <table>
@@ -169,13 +183,12 @@ function showSlides(n) {
 
   </div>
 
-  <div class="price">
-    <span class="offer">Offer Price: ₹14999</span>
-    <span class="strikethrough">Original Price: ₹19999</span>
-  </div>
 </div>
-
 <script src="script.js"></script>
+
+  <footer>
+    &copy; 2024 Time Piece Heaven.
+  </footer>
 
 </body>
 </html>
