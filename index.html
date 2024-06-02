@@ -5,20 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Time Piece Heaven</title>
   <link rel="icon" type="image/png" href="logowatch.png">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Popping:wght@400;500;700&display=swap">
+<!-- /* Style the tab */ -->
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: rgb(0, 150, 255);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+
+}
+</style>
+
+
+
 
   <!-- Add your CSS link or styles here -->
   <style>
     body {
-      font-family: Arial, sans-serif;
+      /*font-family: Arial Rounded MT Bold;*/
       margin: 0;
     }
-
-
-
-
-
     /* Top Navigation */
-    .topnav {
+    /*.topnav {
       overflow: hidden;
       background-color: #333;
       padding: 1% 0;
@@ -47,13 +87,18 @@
       background-color: black;
       color: white;
     }
-
+*/
     /* General Styles */
     header {
       background: linear-gradient(to right, #3498db, #2ecc71);
+
       color: #fff;
       padding: 20px;
     }
+    html {
+  scroll-behavior: smooth;
+}
+
 
     .header-content {
       display: flex;
@@ -68,27 +113,13 @@
     nav ul {
       list-style-type: none;
       margin: 0;
+
       padding: 0;
       display: flex;
     }
 
     nav ul li {
       margin-right: 20px; /* Adjust the spacing between menu items */
-    }
-
-    .latest-collections {
-      text-align: center;
-    }
-
-    .latest-collections ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .latest-collections ul li {
-      display: inline;
-      margin-left: 20px; /* Adjust the spacing between collection links */
     }
 
     /* Responsive Styles */
@@ -100,10 +131,12 @@
 
       nav ul {
         flex-direction: column;
+        font-family: Arial Rounded MT Bold;
       }
 
       nav ul li {
         margin: 10px 0; /* Add spacing between menu items */
+        
       }
 
       .logo img {
@@ -118,6 +151,7 @@
 
       nav ul li {
         margin: 5px 0; /* Further adjust the spacing between menu items */
+
       }
 
       .logo img {
@@ -135,18 +169,28 @@
       bottom: 0;
       width: 100%;
     }
+.watch-grid,
+.watch-collection {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
 
-    .watch-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* Styles for phones and smaller screens */
+@media (max-width: 600px) {
+  .watch-grid,
+  .watch-collection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-    .watch-collection {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
+/* Styles for laptops and larger screens */
+@media (min-width: 1024px) {
+  .watch-grid,
+  .watch-collection {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 
     .watch-item {
       border: 1px solid #ccc;
@@ -293,84 +337,44 @@
       color: #0056b3;
     }
 
-    /* Modal for Watch Specifications */
-    .watch-spec-modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.8);
-      align-items: center;
-      justify-content: center;
-    }
-
-    .watch-spec-modal-content {
-      background-color: #fefefe;
-      margin: 10% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 600px;
-      position: relative;
-    }
-
-    .watch-spec-close {
-      color: #aaa;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .watch-spec-close:hover,
-    .watch-spec-close:focus {
-      color: black;
-      text-decoration: none;
-    }
+   
   </style>
+
+
+
 </head>
 <body>
+
+
 
 <header>
   <div class="header-content">
     <!-- Logo Image with Link -->
     <div class="logo">
       <a href="index.html">
-        <img src="logo.png" alt="Shop Logo">
+        <img src="logo1.png" alt="Shop Logo">
       </a>
     </div>
     <!-- Navigation Menu -->
+    <p style="font-family: Book Antiqua; font-size: 200%;  justify-content: center; align-content: center; color: white"><b>Time is the most valuable currency in the world</b></p>
     <nav>
-      <ul>
-        <li><a href="#home" style="font-size: 130%; text-decoration: none;"><b>Home</b></a></li>
-        <li><a href="#collections" style="font-size: 130%; text-decoration: none;"><b>Collections</b></a></li>
-        <li><a href="#about" style="font-size: 130%; text-decoration: none;"><b>About Us</b></a></li>
-        <li><a href="#contact" style="font-size: 130%; text-decoration: none;"><b>Contact</b></a></li>
+      <ul class="navbar">
+        <li><a href="#home" class="button"><b>Home</b></a></li>
+        <li><a href="#collections" class="button"><b>Collections</b></a></li>
+        <li><a href="#about" class="button"><b>About Us</b></a></li>
+        <li><a href="#contact" class="button"><b>Contact</b></a></li>
       </ul>
     </nav>
     <!-- Latest Watch Collections -->
-    <div class="latest-collections">
-      <h2>Latest Watch Collections</h2>
-      <!-- Add links or images of the latest watch collections -->
-      <ul>
-        <li><a href="#collection1" class="button">Click Here</a></li>
-      </ul>
-    </div>
+    
   </div>
 </header>
 
 <section id="home">
   <div class="greeting">
     <div class="text">
-      <h1>Timeless Craftsmanship, Endless Elegance</h1>
-      <p>Discover Timeless Elegance</p>
-      <p style="color: #7F00FF; font-size: 150%">Time is the most valuable currency in the world</p>
+      <h1 style="font-family: MV Boli;">Timeless Craftsmanship, Endless Elegance</h1>
+      <p style="font-family: Blackadder ITC; font-size: 30px;">Discover Timeless Elegance</p>
 
 
           </div>
@@ -387,274 +391,120 @@
 }
 
 </style>
+<body onload="openCity(event, 'one')">
 
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'one')" id="defaultOpen">Watch Collections</button>
+  <button class="tablinks" onclick="openCity(event, 'two')">Latest Collections</button>
+</div>
 
-<section id="collections">
+<div id="one" class="tabcontent" style="font-family:Bahnschrift SemiLight;">
+    <section id="collections">
   <h2>Watch Collections</h2>
   <div class="watch-collection">
     <!-- Watch Set 1 -->
     <div class="watch-item" data-watch-id="watch1">
       <img src="1watch1.png" alt="Watch 1">
       <h3>Watch Name 1</h3>
-      <p>Description of Watch 1</p>
-      <div class="box"><a href="#" class="spec-button" onclick="openModal(event, 'popup-box1')">View Specifications</a></div>
+      <p style="font-size: 18px;"><b>₹1499</b> <span style="color: green">(12% Off)</span></p>
+
+      <div class="box"><a href="watch.html">View Specifications</a></div>
     </div>
 
     <div class="watch-item" data-watch-id="watch2">
       <!-- Watch 2 content -->
       <img src="1watch2.png" alt="Watch 2">
       <h3>Watch Name 2</h3>
-      <p>Description of Watch 2</p>
-      <div class="box"><a href="#" class="spec-button" onclick="openModal(event, 'popup-box2')">View Specifications</a></div>
+<p style="font-size: 18px;"><b>₹1499</b> <span style="color: green">(12% Off)</span></p>
+            <div class="box"><a href="watch.html">View Specifications</a></div>
     </div>
     <div class="watch-item" data-watch-id="watch3">
       <!-- Watch 2 content -->
       <img src="1watch3.png" alt="Watch 3">
       <h3>Watch Name 3</h3>
-      <p>Description of Watch 3</p>
-      <div class="box"><a href="#" class="spec-button" onclick="openModal(event, 'popup-box3')">View Specifications</a></div>
+<p style="font-size: 18px;"><b>₹1499</b> <span style="color: green">(12% Off)</span></p>
+      <div class="box"><a href="watch.html">View Specifications</a></div>
     </div>
 
     <div class="watch-item" data-watch-id="watch4">
       <!-- Watch 2 content -->
       <img src="1watch4.png" alt="Watch 4">
       <h3>Watch Name 4</h3>
-      <p>Description of Watch 4</p>
-      <div class="box"><a href="#" class="spec-button" onclick="openModal(event, 'popup-box4')">View Specifications</a></div>
+<p style="font-size: 18px;"><b>₹1499</b> <span style="color: green">(12% Off)</span></p>
+      <div class="box"><a href="watch.html">View Specifications</a></div>
     </div>
 
     <div class="watch-item" data-watch-id="watch5">
       <!-- Watch 2 content -->
       <img src="1watch5.png" alt="Watch 5">
       <h3>Watch Name 5</h3>
-      <p>Description of Watch 5</p>
-      <div class="box"><a href="#" class="spec-button" onclick="openModal(event, 'popup-box5')">View Specifications</a></div>
+<p style="font-size: 18px;"><b>₹1499</b> <span style="color: green">(12% Off)</span></p>
+      <div class="box"><a href="watch.html">View Specifications</a></div>
     </div>
 
     <div class="watch-item" data-watch-id="watch6">
       <!-- Watch 2 content -->
       <img src="1watch2.png" alt="Watch 6">
       <h3>Watch Name 6</h3>
-      <p>Description of Watch 6</p>
-      <div class="box"><a href="#" class="spec-button" onclick="openModal(event, 'popup-box6')">View Specifications</a></div>
+<p style="font-size: 18px;"><b>₹1499</b> <span style="color: green">(12% Off)</span></p>
+      <div class="box"><a href="watch.html">View Specifications</a></div>
     </div>
 
     <div class="watch-item" data-watch-id="watch7">
       <!-- Watch 2 content -->
       <img src="1watch7.png" alt="Watch 7">
       <h3>Watch Name 7</h3>
-      <p>Description of Watch 7</p>
-      <div class="box"><a href="#" class="spec-button" onclick="openModal(event, 'popup-box7')">View Specifications</a></div>
+<p style="font-size: 18px;"><b>₹1499</b> <span style="color: green">(12% Off)</span></p>
+      <div class="box"><a href="watch.html">View Specifications</a></div>
     </div>
 
     <div class="watch-item" data-watch-id="watch8">
       <!-- Watch 2 content -->
       <img src="1watch8.png" alt="Watch 8">
       <h3>Watch Name 8</h3>
-      <p>Description of Watch 8</p>
-      <div class="box"><a href="#" class="spec-button" onclick="openModal(event, 'popup-box8')">View Specifications</a></div>
+      <p style="font-size: 18px;"><b>₹1499</b> <span style="color: green">(12% Off)</span></p>
+      <div class="box"><a href="watch.html">View Specifications</a></div>
     </div>
 
     <!-- Add more watch items here -->
 
   </div>
 </section>
+  
 
-<!-- Modal for Watch Specifications -->
-<div id="popup-box1" class="watch-spec-modal">
-  <div class="watch-spec-modal-content">
-    <span class="watch-spec-close" onclick="closeModal(event, 'popup-box1')">&times;</span>
-    <h1>Watch Name: Watch Name 1</h1>
-    <p>Description: Description of Watch 1</p>
-    <h2>Technical Specifications:</h2>
-    <ul>  
-      <li>Case Size: 42mm</li>
-      <li>Case Material: Titanium</li>
-      <li>Water Resistance: 200 meters</li>
-      <li>Movement Type: Quartz</li>
-      <li>Complications: Chronograph</li>
-      <li>Dial Color: Silver</li>
-      <li>Strap Material: Nylon</li>
-      <li>Additional Features: GPS</li>
-    </ul>
-  </div>
 </div>
 
-<div id="popup-box2" class="watch-spec-modal">
-  <div class="watch-spec-modal-content">
-    <span class="watch-spec-close" onclick="closeModal(event, 'popup-box2')">&times;</span>
-    <h1>Watch Name: Watch Name 2</h1>
-    <p>Description: Description of Watch 2</p>
-    <h2>Technical Specifications:</h2>
-    <ul>  
-      <li>Case Size: 42mm</li>
-      <li>Case Material: Titanium</li>
-      <li>Water Resistance: 200 meters</li>
-      <li>Movement Type: Quartz</li>
-      <li>Complications: Chronograph</li>
-      <li>Dial Color: Silver</li>
-      <li>Strap Material: Nylon</li>
-      <li>Additional Features: GPS</li>
-    </ul>
-  </div>
-</div>
+<div id="two" class="tabcontent" style="font-family:Bahnschrift SemiLight;">
+    <section id="collections">
+  <h2>Watch Collections</h2>
+  <div class="watch-collection">
+    <!-- Watch Set 1 -->
+  
+    <div class="watch-item" data-watch-id="watch7">
+      <!-- Watch 2 content -->
+      <img src="1watch7.png" alt="Watch 7">
+      <h3>Watch Name 7</h3>
+<p style="font-size: 18px;"><b>₹1499</b> <span style="color: green">(12% Off)</span></p>
+      <div class="box"><a href="watch.html">View Specifications</a></div>
+    </div>
 
-<div id="popup-box3" class="watch-spec-modal">
-  <div class="watch-spec-modal-content">
-    <span class="watch-spec-close" onclick="closeModal(event, 'popup-box3')">&times;</span>
-    <h1>Watch Name: Watch Name 3</h1>
-    <p>Description: Description of Watch 3</p>
-    <h2>Technical Specifications:</h2>
-    <ul>  
-      <li>Case Size: 42mm</li>
-      <li>Case Material: Titanium</li>
-      <li>Water Resistance: 200 meters</li>
-      <li>Movement Type: Quartz</li>
-      <li>Complications: Chronograph</li>
-      <li>Dial Color: Silver</li>
-      <li>Strap Material: Nylon</li>
-      <li>Additional Features: GPS</li>
-    </ul>
-  </div>
-</div>
+    <div class="watch-item" data-watch-id="watch8">
+      <!-- Watch 2 content -->
+      <img src="1watch8.png" alt="Watch 8">
+      <h3>Watch Name 8</h3>
+      <p style="font-size: 18px;"><b>₹1499</b> <span style="color: green">(12% Off)</span></p>
+      <div class="box"><a href="watch.html">View Specifications</a></div>
+    </div>
 
-<div id="popup-box4" class="watch-spec-modal">
-  <div class="watch-spec-modal-content">
-    <span class="watch-spec-close" onclick="closeModal(event, 'popup-box4')">&times;</span>
-    <h1>Watch Name: Watch Name 4</h1>
-    <p>Description: Description of Watch 4</p>
-    <h2>Technical Specifications:</h2>
-    <ul>  
-      <li>Case Size: 42mm</li>
-      <li>Case Material: Titanium</li>
-      <li>Water Resistance: 200 meters</li>
-      <li>Movement Type: Quartz</li>
-      <li>Complications: Chronograph</li>
-      <li>Dial Color: Silver</li>
-      <li>Strap Material: Nylon</li>
-      <li>Additional Features: GPS</li>
-    </ul>
-  </div>
-</div>
+    <!-- Add more watch items here -->
 
-<div id="popup-box5" class="watch-spec-modal">
-  <div class="watch-spec-modal-content">
-    <span class="watch-spec-close" onclick="closeModal(event, 'popup-box5')">&times;</span>
-    <h1>Watch Name: Watch Name 5</h1>
-    <p>Description: Description of Watch 5</p>
-    <h2>Technical Specifications:</h2>
-    <ul>  
-      <li>Case Size: 42mm</li>
-      <li>Case Material: Titanium</li>
-      <li>Water Resistance: 200 meters</li>
-      <li>Movement Type: Quartz</li>
-      <li>Complications: Chronograph</li>
-      <li>Dial Color: Silver</li>
-      <li>Strap Material: Nylon</li>
-      <li>Additional Features: GPS</li>
-    </ul>
   </div>
+</section>
+  
 </div>
 
 
-<div id="popup-box6" class="watch-spec-modal">
-  <div class="watch-spec-modal-content">
-    <span class="watch-spec-close" onclick="closeModal(event, 'popup-box6')">&times;</span>
-    <h1>Watch Name: Watch Name 6</h1>
-    <p>Description: Description of Watch 6</p>
-    <h2>Technical Specifications:</h2>
-    <ul>  
-      <li>Case Size: 42mm</li>
-      <li>Case Material: Titanium</li>
-      <li>Water Resistance: 200 meters</li>
-      <li>Movement Type: Quartz</li>
-      <li>Complications: Chronograph</li>
-      <li>Dial Color: Silver</li>
-      <li>Strap Material: Nylon</li>
-      <li>Additional Features: GPS</li>
-    </ul>
-  </div>
-</div>
 
-
-<div id="popup-box7" class="watch-spec-modal">
-  <div class="watch-spec-modal-content">
-    <span class="watch-spec-close" onclick="closeModal(event, 'popup-box7')">&times;</span>
-    <h1>Watch Name: Watch Name 7</h1>
-    <p>Description: Description of Watch 7</p>
-    <h2>Technical Specifications:</h2>
-    <ul>  
-      <li>Case Size: 42mm</li>
-      <li>Case Material: Titanium</li>
-      <li>Water Resistance: 200 meters</li>
-      <li>Movement Type: Quartz</li>
-      <li>Complications: Chronograph</li>
-      <li>Dial Color: Silver</li>
-      <li>Strap Material: Nylon</li>
-      <li>Additional Features: GPS</li>
-    </ul>
-  </div>
-</div>
-
-
-<div id="popup-box8" class="watch-spec-modal">
-  <div class="watch-spec-modal-content">
-    <span class="watch-spec-close" onclick="closeModal(event, 'popup-box8')">&times;</span>
-    <h1>Watch Name: Watch Name 8</h1>
-    <p>Description: Description of Watch 8</p>
-    <h2>Technical Specifications:</h2>
-    <ul>  
-      <li>Case Size: 42mm</li>
-      <li>Case Material: Titanium</li>
-      <li>Water Resistance: 200 meters</li>
-      <li>Movement Type: Quartz</li>
-      <li>Complications: Chronograph</li>
-      <li>Dial Color: Silver</li>
-      <li>Strap Material: Nylon</li>
-      <li>Additional Features: GPS</li>
-    </ul>
-  </div>
-</div>
-
-
-<div id="popup-box2" class="watch-spec-modal">
-  <div class="watch-spec-modal-content">
-    <span class="watch-spec-close" onclick="closeModal(event, 'popup-box2')">&times;</span>
-    <h1>Watch Name: Watch Name 2</h1>
-    <p>Description: Description of Watch 2</p>
-    <h2>Technical Specifications:</h2>
-    <ul>  
-      <li>Case Size: 42mm</li>
-      <li>Case Material: Titanium</li>
-      <li>Water Resistance: 200 meters</li>
-      <li>Movement Type: Quartz</li>
-      <li>Complications: Chronograph</li>
-      <li>Dial Color: Silver</li>
-      <li>Strap Material: Nylon</li>
-      <li>Additional Features: GPS</li>
-    </ul>
-  </div>
-</div>
-
-
-<div id="popup-box2" class="watch-spec-modal">
-  <div class="watch-spec-modal-content">
-    <span class="watch-spec-close" onclick="closeModal(event, 'popup-box2')">&times;</span>
-    <h1>Watch Name: Watch Name 2</h1>
-    <p>Description: Description of Watch 2</p>
-    <h2>Technical Specifications:</h2>
-    <ul>  
-      <li>Case Size: 42mm</li>
-      <li>Case Material: Titanium</li>
-      <li>Water Resistance: 200 meters</li>
-      <li>Movement Type: Quartz</li>
-      <li>Complications: Chronograph</li>
-      <li>Dial Color: Silver</li>
-      <li>Strap Material: Nylon</li>
-      <li>Additional Features: GPS</li>
-    </ul>
-  </div>
-</div>
 
 <script>
 function openModal(event, modalId) {
@@ -669,36 +519,29 @@ function closeModal(event, modalId) {
   modal.style.display = "none";
 }
 </script>
-
-
-<!-- JavaScript for Modal -->
 <script>
-  // Get the modal
-  var modal = document.querySelector('.watch-spec-modal');
-
-  // Get the button that opens the modal
-  var btn = document.querySelector('.spec-button');
-
-  // Get the <span> element that closes the modal
-  var span = document.querySelector('.watch-spec-close');
-
-  // When the user clicks the button, open the modal 
-  btn.onclick = function() {
-    modal.style.display = "block";
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
   }
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
+  document.getElementById(cityName).style.display = "block";
+  if (evt) {
+    evt.currentTarget.className += " active";
+  } else {
+    document.getElementById("defaultOpen").className += " active";
   }
+}
+
+// Ensure the London tab is open by default
+document.getElementById("defaultOpen").click();
 </script>
+
 
 
 
@@ -706,8 +549,8 @@ function closeModal(event, modalId) {
   <h2>Contact us</h2>
   <div class="contact-container">
     <div class="contact-item">
-      <h3>Email Us</h3>
-      <p><a href="mailto:info@yourwatchshop.com">berlinabi2024254@gmail.com</a></p>
+      <h3>Email us</h3>
+      <p><a href="mailto:berlinabi2024254@gmail.com">berlinabi2024254@gmail.com</a></p>
     </div>
     <div class="contact-item">
       <h3>Whatsapp us</h3>

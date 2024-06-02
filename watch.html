@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watch Shop</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+	body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.specifications {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.specifications h2 {
+  margin-bottom: 10px;
+}
+
+.specifications table {
+  margin: auto;
+  text-align: left;
+}
+
+.specifications table td {
+  padding: 5px 10px;
+}
+
+.price {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.offer {
+  color: green;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #888;
+}
+
+</style>
+</head>
+<body>
+<script>
+	let slideIndex = 0;
+let xDown = null;
+
+function startTouch(evt) {
+  xDown = evt.touches[0].clientX;
+}
+
+function moveTouch(evt) {
+  if (!xDown) {
+    return;
+  }
+
+  let xUp = evt.touches[0].clientX;
+  let xDiff = xDown - xUp;
+
+  if (xDiff > 0) {
+    changeSlide(1);
+  } else {
+    changeSlide(-1);
+  }
+
+  xDown = null;
+}
+
+function changeSlide(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.querySelector(".carousel").getElementsByTagName("img");
+
+  if (n >= slides.length) { slideIndex = 0 }
+  if (n < 0) { slideIndex = slides.length - 1 }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[slideIndex].style.display = "block";
+}
+
+</script>
+<div class="container">
+  <div class="carousel" ontouchstart="startTouch(event)" ontouchmove="moveTouch(event)">
+    <img src="watch1-front.png" alt="Watch Front View" class="active">
+    <img src="watch1-side.png" alt="Watch Side View">
+    <img src="watch1-back.png" alt="Watch Back View">
+    <img src="watch1-angle1.png" alt="Watch Angle View 1">
+    <img src="watch1-angle2.png" alt="Watch Angle View 2">
+  </div>
+
+  <div class="specifications">
+    <h2>Watch Specifications</h2>
+    <table>
+  <tr>
+    <td>Case Size:</td>
+    <td>42mm</td>
+  </tr>
+  <tr>
+    <td>Case Material:</td>
+    <td>Titanium</td>
+  </tr>
+  <tr>
+    <td>Water Resistance:</td>
+    <td>200 meters</td>
+  </tr>
+  <tr>
+    <td>Movement Type:</td>
+    <td>Quartz</td>
+  </tr>
+  <tr>
+    <td>Complications:</td>
+    <td>Chronograph</td>
+  </tr>
+  <tr>
+    <td>Dial Color:</td>
+    <td>Silver</td>
+  </tr>
+  <tr>
+    <td>Strap Material:</td>
+    <td>Nylon</td>
+  </tr>
+  <tr>
+    <td>Additional Features:</td>
+    <td>GPS</td>
+  </tr>
+</table>
+
+  </div>
+
+  <div class="price">
+    <span class="offer">Offer Price: ₹14999</span>
+    <span class="strikethrough">Original Price: ₹19999</span>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
